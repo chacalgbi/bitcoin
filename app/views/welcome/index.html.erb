@@ -4,4 +4,8 @@
 <p>Seu nome de trás pra frente: <%= "Thomé Lucas".reverse %> </p>
 <p> <% x = 'teste' %>  </p>
 <p>O valor de X é:  <%= x %> </p>
-<p> A data de hoje é: <%= Date.today %> </p>
+<p> A data de hoje é: <%= Date.today.strftime("%d/%m/%Y") %> </p>
+
+<%= render "menu" %>
+
+<p>Eu me chamo: <strong> <%= @meu_nome %>  </strong> </p>
