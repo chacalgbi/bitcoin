@@ -1,11 +1,50 @@
 <h1>Bem Vindo</h1>
-<p><%= ambiente_rails %></p>
+<p>Modo: <%= ambiente_rails %></p>
 
-<p>Seu nome de trás pra frente: <%= "Thomé Lucas".reverse %> </p>
-<p> <% x = 'teste' %>  </p>
-<p>O valor de X é:  <%= x %> </p>
-<p> A data de hoje é: <%= Date.today.strftime("%d/%m/%Y") %> </p>
+<p>O idioma usado é: <strong> <%= t('actual_locale') %> </strong></p>
+
+<p> A data de hoje é: <%= l(Date.today) %> </p>
+<p><%= t('hello') %></p>
 
 <%= render "menu" %>
 
 <p>Eu me chamo: <strong> <%= @meu_nome %>  </strong> </p>
+
+    <div class="alert alert-primary" role="alert">
+      Um alerta dentro do index.html.erb
+    </div>
+
+    <div class="container mt-3">
+  <h2>Centered Modal Example</h2>
+  <p>Center the modal vertically and horizontally within the page, with the .modal-dialog-centered class.</p>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mineracaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= @mineracaos.human_attribute_name(:nome) %></th>
+      <th><%= @mineracaos.human_attribute_name(:acronimo) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mineracaos.each do |mineracao| %>
+      <tr>
+        <td><%= mineracao.nome %></td>
+        <td><%= mineracao.acronimo %></td>
+        <td><%= link_to t('links.show'), mineracao %></td>
+        <td><%= link_to t('links.edit'), edit_mineracao_path(mineracao) %></td>
+        <td><%= link_to t('links.delete'), mineracao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mineracao', new_mineracao_path %>

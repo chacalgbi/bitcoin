@@ -1,5 +1,6 @@
 class CoinsController < ApplicationController
   before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_mineracao_opcoes, only: [:new, :edit, :update, :create]
 
   # GET /coins or /coins.json
   def index
@@ -57,6 +58,11 @@ class CoinsController < ApplicationController
   end
 
   private
+
+    def set_mineracao_opcoes
+      @mineracao_opcoes = Mineracao.all.pluck(:nome, :id)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_coin
       @coin = Coin.find(params[:id])
@@ -64,6 +70,6 @@ class CoinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image)
+      params.require(:coin).permit(:description, :acronym, :url_image, :mineracao_id)
     end
 end
